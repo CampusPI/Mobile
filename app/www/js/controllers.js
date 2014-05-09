@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope) {
+  $scope.width = window.innerWidth;
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -15,4 +16,4 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-})
+});
