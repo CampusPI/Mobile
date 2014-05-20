@@ -29,6 +29,7 @@ C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\w
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\img\ionic.png \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\js\app.js \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\js\controllers.js \
+C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\js\directives.js \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\lib\ionic \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\lib\ionic\css \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\lib\ionic\fonts \

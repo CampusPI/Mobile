@@ -6383,3 +6383,6 @@ a.button {
 .platform-android2:not(.enable-transitions) * {
   -webkit-transition: none !important;
   transition: none !important; }
+
+.green {
+  background-color: green; }
