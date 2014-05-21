@@ -1,7 +1,14 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', function($scope, $location) {
   $scope.width = window.innerWidth;
+  $scope.alert = function() {
+    console.log('cenas');
+  };
+  $scope.go = function (path,id) {
+    $selected = id;
+    $location.path(path);
+  };
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -16,4 +23,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+  $scope.id = $stateParams.videoId;
 });

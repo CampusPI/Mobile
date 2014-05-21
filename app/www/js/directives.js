@@ -36,7 +36,7 @@ angular.module('starter.directives', [])
     }
 
     function doDrag(e) {
-      $element.attr('style', '-webkit-transform: translate3d(' + e.gesture.deltaX + 'px, ' + '0, 0)');
+      $element.attr('style', '-webkit-transform: translate3d(' + e.gesture.deltaX + 'px, ' + '0, 0);');
     }
 
     function doDragEnd(e) {

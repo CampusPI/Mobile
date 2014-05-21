@@ -8,3 +8,33 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   background-color: green;
 }
 
+.escondeesconde {
+  position: absolute;
+  background-color: $balanced;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: white;
+  font-size: 250%;
+  width: 100%;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.escondeesconde div {
+  height: 100%;
+}
+
+.escondeesconde i {
+  margin: 6px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+
+.card{
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 0 0;
+}
+
