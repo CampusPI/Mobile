@@ -36,11 +36,19 @@ angular.module('starter.directives', [])
     }
 
     function doDrag(e) {
-      $element.attr('style', '-webkit-transform: translate3d(' + e.gesture.deltaX + 'px, ' + '0, 0);');
+      if (e.gesture.deltaX > 0)
+        $element.attr('style', '-webkit-transform: translate3d(' + e.gesture.deltaX + 'px, ' + '0, 0);');
     }
 
     function doDragEnd(e) {
-      $element.attr('style', '-webkit-transition:all .2s linear;');
+      if (e.gesture.deltaX > width/4) {
+        $element.addClass('animated slideOutRight');
+        setTimeout(function(){$element.parent().addClass("animated fadeOutUp");}, 500);
+        setTimeout(function(){$element.parent().remove();}, 700);
+      }
+      else {
+        $element.attr('style', '-webkit-transition:all .2s linear;');
+      }
     }
   };
 });
