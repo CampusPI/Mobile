@@ -4,6 +4,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+$text-color: #8b8f98;
+$headings-color: #646975;
+
 .green {
   background-color: green;
 }
@@ -80,4 +83,26 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .fadeOutUp {
   -webkit-animation-name: fadeOutUp;
   animation-name: fadeOutUp;
+}
+
+.item {
+  color: $text-color;
+}
+
+.bar .title {
+  font-size: 22px;
+}
+
+.item h2 {
+  margin: 0;
+  margin-top: 8.5px;
+  font-size: 18px;
+}
+
+.item-button-right > .button {
+  top: 17px;
+}
+
+.item.item-thumbnail-left {
+  border-top: 0;
 }

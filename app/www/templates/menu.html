@@ -1,28 +1,48 @@
 <ion-side-menus>
-
   <ion-pane ion-side-menu-content drag-content="false">
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-bar class="bar-energized nav-title-slide-ios7">
       <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i></ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
   <ion-side-menu side="left" width="{{width}}"
-    <header class="bar bar-header bar-stable">
+    <header class="bar bar-header bar-assertive">
       <div class="buttons">
-        <button menu-close class="button button-clear" ><i class="icon ion-close-round"></i></button>
+        <button menu-close class="button button-icon" ><i class="icon ion-navicon"></i></button>
       </div>
       <h1 class="title">Left</h1>
     </header>
-    <ion-content class="has-header">
+    <ion-content class="has-header light-bg">
       <ion-list>
+        <ion-item class="item item-avatar item-button-right">
+          <img src="http://gravatar.com/avatar/b4e15cc67a93380cbf8f2a23b355f380">
+          <h2><strong>João Campinhos</strong></h2>
+          <button class="button button-light" menu-close>
+            <span style="float: right;" class="calm" ng-click="go('/app/search')">Logout</span>
+          </button>
+        </ion-item>
+        <div class="item item-divider">
+          Listas
+        </div>
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/list/1">
+          <i class="icon ion-ios7-star balanced"></i>
+          Favoritos
+        </ion-item>
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/list/2">
+          <i class="icon ion-ios7-clock energized"></i>
+          Ver mais tarde
+        </ion-item>
+        <div class="item item-divider">
+          Departamentos
+        </div>
         <ion-item nav-clear menu-close href="#/app/search">
-          Search
+          Informática
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/search">
+          Matemática
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
+          Física
         </ion-item>
       </ion-list>
     </ion-content>
