@@ -25,6 +25,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
       controller: 'AppCtrl'
     })
 
+    .state('app.videos', {
+      url: "/videos",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/videos.html",
+          controller: 'VideosCtrl'
+        }
+      }
+    })
+
+    .state('app.video', {
+      url: "/video/:videoId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/video.html",
+          controller: 'VideoCtrl'
+        }
+      }
+    })
+
+    .state('app.list', {
+      url: "/list/:listId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/list.html",
+          controller: 'ListCtrl'
+        }
+      }
+    })
+
     .state('app.search', {
       url: "/search",
       views: {
@@ -32,9 +62,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
           templateUrl: "templates/search.html"
         }
       }
-    })
+    });
 
-    .state('app.browse', {
+    /*.state('app.browse', {
       url: "/browse",
       views: {
         'menuContent' :{
@@ -42,6 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
         }
       }
     })
+
     .state('app.playlists', {
       url: "/playlists",
       views: {
@@ -52,7 +83,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
       }
     })
 
-    .state('app.single', {
+    /*.state('app.single', {
       url: "/playlists/:playlistId",
       views: {
         'menuContent' :{
@@ -60,8 +91,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
           controller: 'PlaylistCtrl'
         }
       }
-    });
+    });*/
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/videos');
 });
 

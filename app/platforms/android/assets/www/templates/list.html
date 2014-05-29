@@ -1,0 +1,19 @@
+<ion-view title="{{title}}">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" noScroll>
+    <ion-list ng-repeat="c in content">
+
+      <div class="item item-thumbnail-left" href="#">
+        <img src="http://placehold.it/80x80">
+        <h2>{{c.title}}</h2>
+        <p>Uma descrição fixe</p>
+      </div>
+
+    </ion-list>
+  </ion-content>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios7-search"></button>
+  </ion-nav-buttons>
+</ion-view>

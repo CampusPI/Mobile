@@ -3,14 +3,14 @@
 // -------------------------------
 
 $light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #4a87ee !default;
-$calm:                            #43cee6 !default;
-$balanced:                        #66cc33 !default;
-$energized:                       #f0b840 !default;
-$assertive:                       #ef4e3a !default;
-$royal:                           #8a6de9 !default;
-$dark:                            #444 !default;
+$stable:                          #dbdbdb !default;
+$positive:                        #4dbfc1 !default;
+$calm:                            #5bb1ec !default;
+$balanced:                        #46bc62 !default;
+$energized:                       #fbb25c !default;
+$assertive:                       #e75656 !default;
+$royal:                           #6c55f0 !default;
+$dark:                            #646975 !default;
 
 
 // Base
@@ -21,10 +21,10 @@ $font-family-light-sans-serif:    "Helvetica Neue-Light", "Helvetica Neue Light"
 $font-family-serif:               Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", monospace !default;
 
-$font-family-base:                $font-family-sans-serif !default;
-$font-size-base:                  14px !default;
-$font-size-large:                 18px !default;
-$font-size-small:                 11px !default;
+$font-family-base:                $font-family-light-sans-serif !default;
+$font-size-base:                  16px !default;
+$font-size-large:                 20px !default;
+$font-size-small:                 13px !default;
 
 $line-height-base:                1.428571429 !default; // 20/14
 $line-height-computed:            floor($font-size-base * $line-height-base) !default; // ~20px
@@ -35,8 +35,8 @@ $headings-font-family:            $font-family-base !default;
 $headings-font-weight:            500 !default;
 $headings-line-height:            1.2 !default;
 
-$base-background-color:           #fff !default;
-$base-color:                      #000 !default;
+$base-background-color:           $light !default;
+$base-color:                      $dark !default;
 
 $link-color:                      $positive !default;
 $link-hover-color:                darken($link-color, 15%) !default;
@@ -93,13 +93,13 @@ $button-bar-button-padding:       8px !default;
 $button-bar-button-icon-size:     20px !default;
 
 $button-light-bg:                 $light !default;
-$button-light-text:               #444 !default;
-$button-light-border:             #ddd !default;
+$button-light-text:               $dark !default;
+$button-light-border:             #dadada !default;
 $button-light-active-bg:          #fafafa !default;
 $button-light-active-border:      #ccc !default;
 
 $button-stable-bg:                $stable !default;
-$button-stable-text:              #444 !default;
+$button-stable-text:              $dark !default;
 $button-stable-border:            #b2b2b2 !default;
 $button-stable-active-bg:         #e5e5e5 !default;
 $button-stable-active-border:     #a2a2a2 !default;
@@ -402,7 +402,7 @@ $card-footer-bg:                  #F5F5F5 !default;
 $card-padding:                    10px !default;
 $card-border-width:               1px !default;
 
-$card-border-color:               #ccc !default;
+$card-border-color:               $stable !default;
 $card-border-radius:              2px !default;
 
 

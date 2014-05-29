@@ -101,9 +101,9 @@ C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\w
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\plugins\org.apache.cordova.device\www \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
-C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\browse.html \
+C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\list.html \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\menu.html \
-C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\playlist.html \
-C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\playlists.html \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\search.html \
+C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\video.html \
+C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\assets\www\templates\videos.html \
 C:\Users\joao\Documents\Faculdade\campustv\mobile\app\platforms\android\ant-build\AndroidManifest.xml \

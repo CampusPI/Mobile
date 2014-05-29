@@ -14,62 +14,41 @@ angular.module('starter.directives', [])
 })
 
 .directive('swipetowin', function($ionicGesture) {
-  return {
-    // Other directive stuff ...
+  return function($scope, $element, $attr) {
 
-    link: function($scope, $element, $attr) {
+    var width;
 
-      var width;
+    $ionicGesture.on('dragstart', function(e) {
+      doDragStart(e);
+    }, $element);
 
-      $ionicGesture.on('dragstart', function(e) {
-        doDragStart(e);
-        console.log('start');
-      }, $element);
+    $ionicGesture.on('drag', function(e) {
+      doDrag(e);
+    }, $element);
 
-      $ionicGesture.on('drag', function(e) {
-        doDrag(e);
-        console.log('drag');
-      }, $element);
+    $ionicGesture.on('dragend', function(e) {
+      doDragEnd(e);
+    }, $element);
 
-      $ionicGesture.on('dragend', function(e) {
-        doDragEnd(e);
-        console.log('end');
-      }, $element);
+    function doDragStart(e) {
+      width = $element[0].offsetWidth;
+      initTouch = (e.gesture.touches[0].pageX);
+    }
 
-      function doDragStart(e) {
-        width = $element[0].offsetWidth;
-        initTouch = (e.gesture.touches[0].pageX);
+    function doDrag(e) {
+      if (e.gesture.deltaX > 0)
+        $element.attr('style', '-webkit-transform: translate3d(' + e.gesture.deltaX + 'px, ' + '0, 0);');
+    }
+
+    function doDragEnd(e) {
+      if (e.gesture.deltaX > width/4) {
+        $element.addClass('animated slideOutRight');
+        setTimeout(function(){$element.parent().addClass("animated fadeOutUp");}, 500);
+        setTimeout(function(){$element.parent().remove();}, 700);
       }
-
-      function doDrag(e) {
-        $element.attr('style', '-webkit-transform: translate3d(' + e.gesture.deltaX + 'px, ' + '0, 0)');
-      }
-
-      function doDragEnd(e) {
+      else {
         $element.attr('style', '-webkit-transition:all .2s linear;');
       }
-
-      /*
-
-    _doDrag: function(e) {
-      var o = e.gesture.deltaY / 3;
-
-      this.rotationAngle = Math.atan(o/this.touchDistance) * this.rotationDirection;
-
-      if(e.gesture.deltaY < 0) {
-        this.rotationAngle = 0;
-      }
-
-      this.y = this.startY + (e.gesture.deltaY * 0.4);
-
-      this.el.style[ionic.CSS.TRANSFORM] = 'translate3d(' + this.x + 'px, ' + this.y  + 'px, 0) rotate(' + (this.rotationAngle || 0) + 'rad)';
-    },
-    _doDragEnd: function(e) {
-      this.transitionOut(e);
-    }
-  });
-      */
-
     }
   };
 });
