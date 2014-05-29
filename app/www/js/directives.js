@@ -45,6 +45,7 @@ angular.module('starter.directives', [])
         $element.addClass('animated slideOutRight');
         setTimeout(function(){$element.parent().addClass("animated fadeOutUp");}, 500);
         setTimeout(function(){$element.parent().remove();}, 700);
+        $scope.addtoFavs($element[0].attributes.swipetowin);
       }
       else {
         $element.attr('style', '-webkit-transition:all .2s linear;');

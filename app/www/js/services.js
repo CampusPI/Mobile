@@ -42,4 +42,36 @@ angular.module('app.services', [])
       });
     }
   };
+})
+
+.factory('FavoritesLocal', function ($http) {
+  var a = [];
+  return {
+    add: function(id) {
+      a.push(id);
+    },
+    get: function() {
+      return a;
+    }
+  };
+})
+
+.factory('VideosLocal', function ($http) {
+  var a = [];
+  return {
+    add: function(array) {
+      a = array;
+    },
+    remove: function(id) {
+      for (var i = 0; i < a.length; i++) {
+        if (a[i].id == id) {
+          a.splice(i, 1);
+          return a;
+        }
+      }
+    },
+    get: function() {
+      return a;
+    }
+  };
 });

@@ -1,6 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $location) {
+.controller('AppCtrl', function($scope, $location, VideoService, VideosLocal) {
+  console.log('dafuck');
+  VideoService.getList().then(function(data){
+    VideosLocal.add(data);
+  });
   $scope.width = window.innerWidth;
   $scope.alert = function() {
     console.log('cenas');
@@ -13,27 +17,30 @@ angular.module('starter.controllers', [])
   $scope.fav = [];
 })
 
-.controller('VideosCtrl', function($scope, VideoService) {
-  VideoService.getList().then(function(data){
-    $scope.playlists = data;
-  });
+.controller('VideosCtrl', function($scope, VideosLocal, FavoritesLocal) {
+
+  $scope.playlists = VideosLocal.get();
+
+  $scope.addtoFavs = function(id) {
+    FavoritesLocal.add(id.value);
+    VideosLocal.remove(id.value);
+  };
 })
 
 .controller('VideoCtrl', function($scope, $stateParams, VideoService) {
   $scope.id = $stateParams.videoId;
   VideoService.getVideo($scope.id).then(function(data){
-    $scope.title = data[0].name;
+    $scope.title = data.name;
   });
 })
 
-.controller('ListCtrl', function($scope) {
+.controller('ListCtrl', function($scope, VideoService, FavoritesLocal) {
   $scope.title = 'Favoritos';
-  $scope.content = [
-    { title: 'Video 1', id: 1 },
-    { title: 'Video 2', id: 2 },
-    { title: 'Video 3', id: 3 },
-    { title: 'Video 4', id: 4 },
-    { title: 'Video 5', id: 5 },
-    { title: 'Video 6', id: 6 }
-  ];
+  $scope.content = [];
+  var f = FavoritesLocal.get();
+  for (var i = 0; i < f.length; i++) {
+    VideoService.getVideo(f[i]).then(function(data){
+      $scope.content.push(data);
+    });
+  }
 });
