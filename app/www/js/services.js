@@ -1,11 +1,11 @@
 angular.module('app.services', [])
 
-.factory('VideoService', function ($http) {
+.factory('VideoService', function ($http, endpoint) {
   return {
     getVideo: function(id) {
       return $http({
         method: 'GET',
-        url: 'http://localhost:8080/api/web/video/'+id
+        url: endpoint+'/api/web/video/'+id
       }).then(function(response) {
         return response.data;
       });
@@ -13,7 +13,7 @@ angular.module('app.services', [])
     getList: function() {
       return $http({
         method: 'GET',
-        url: 'http://localhost:8080/api/web/videos'
+        url: endpoint+'/api/tv/videos'
       }).then(function(response) {
         return response.data;
       });
@@ -21,13 +21,18 @@ angular.module('app.services', [])
   };
 })
 
-.factory('FavoritesService', function ($http) {
+.factory('FavoritesService', function ($http, endpoint) {
   return {
     getFavorites: function(id) {
       return $http({
         method: 'GET',
-        url: 'http://localhost:8080/api/web/favorites',
-        params: {id: id}
+        url: endpoint+'/api/web/favorites',
+        headers: {
+          'Authorization': 'Bearer '+'109029607727800353127'
+        },
+        params: {
+          id: id
+        }
       }).then(function(response) {
         return response.data;
       });
@@ -35,7 +40,7 @@ angular.module('app.services', [])
     addFavorite: function(userid, videoid) {
       return $http({
         method: 'POST',
-        url: 'http://localhost:8080/api/web/favorites',
+        url: endpoint+'/api/web/favorites',
         data: {userid: userid, videoid: videoid}
       }).then(function(response) {
         return response.data;
@@ -44,7 +49,7 @@ angular.module('app.services', [])
   };
 })
 
-.factory('FavoritesLocal', function ($http) {
+.factory('FavoritesLocal', function ($http, endpoint) {
   var a = [];
   return {
     add: function(id) {
@@ -56,7 +61,7 @@ angular.module('app.services', [])
   };
 })
 
-.factory('VideosLocal', function ($http) {
+.factory('VideosLocal', function ($http, endpoint) {
   var a = [];
   return {
     add: function(array) {

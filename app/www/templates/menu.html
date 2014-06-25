@@ -1,19 +1,20 @@
 <ion-side-menus>
   <ion-pane ion-side-menu-content drag-content="false">
-    <ion-nav-bar class="bar-energized nav-title-slide-ios7">
+    <ion-nav-bar class="bar-positive nav-title-slide-ios7">
       <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i></ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
   <ion-side-menu side="left" width="{{width}}"
-    <header class="bar bar-header bar-assertive">
+    <header class="bar bar-header bar-balanced">
       <div class="buttons">
         <button menu-close class="button button-icon" ><i class="icon ion-navicon"></i></button>
       </div>
-      <h1 class="title">Left</h1>
+      <h1 class="title">Menu</h1>
     </header>
     <ion-content class="has-header light-bg">
       <ion-list>
+        <img class="logoimg" src="http://i.imgur.com/ycyEqRu.png">
         <ion-item class="item item-avatar item-button-right">
           <img src="http://gravatar.com/avatar/b4e15cc67a93380cbf8f2a23b355f380">
           <h2><strong>João Campinhos</strong></h2>
@@ -26,7 +27,7 @@
         </div>
         <ion-item nav-clear menu-close class="item-icon-left" href="#/app/browse">
           <i class="icon ion-ios7-videocam royal"></i>
-          Vídeos
+          Vídeos e Artigos
         </ion-item>
         <ion-item nav-clear menu-close class="item-icon-left" href="#/app/list/1">
           <i class="icon ion-ios7-star balanced"></i>

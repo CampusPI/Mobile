@@ -22,6 +22,8 @@ angular.module(
   });
 })
 
+.constant('endpoint','http://localhost:8080')
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
