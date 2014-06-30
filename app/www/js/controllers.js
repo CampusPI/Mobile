@@ -10,16 +10,22 @@ angular.module('starter.controllers', [])
     $location.path(path);
   };
   $scope.fav = [];
+
+
+
 })
 
-.controller('VideosCtrl', function($scope, VideoService) {
+.controller('VideosCtrl', function($scope, VideoService, FavoritesService) {
 
   VideoService.getList().then(function(data){
     $scope.playlists = data;
   });
 
   $scope.addtoFavs = function(cenas) {
-    console.log(cenas);
+    console.log(cenas.value);
+    FavoritesService.addFavorite(cenas.value).then(function(coiso) {
+      console.log(coiso);
+    });
   };
 
 })
@@ -32,7 +38,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ListCtrl', function($scope, FavoritesService, FavoritesLocal) {
-
   FavoritesService.getFavorites($scope.id).then(function(data){
     console.log(data);
     $scope.content = data;

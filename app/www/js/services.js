@@ -37,11 +37,14 @@ angular.module('app.services', [])
         return response.data;
       });
     },
-    addFavorite: function(userid, videoid) {
+    addFavorite: function(videoid) {
       return $http({
         method: 'POST',
         url: endpoint+'/api/web/favorites',
-        data: {userid: userid, videoid: videoid}
+        headers: {
+          'Authorization': 'Bearer '+'109029607727800353127'
+        },
+        data: {videoid: videoid}
       }).then(function(response) {
         return response.data;
       });
