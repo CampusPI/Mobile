@@ -11,8 +11,6 @@ angular.module('starter.controllers', [])
   };
   $scope.fav = [];
 
-
-
 })
 
 .controller('VideosCtrl', function($scope, VideoService, FavoritesService) {
@@ -22,10 +20,7 @@ angular.module('starter.controllers', [])
   });
 
   $scope.addtoFavs = function(cenas) {
-    console.log(cenas.value);
-    FavoritesService.addFavorite(cenas.value).then(function(coiso) {
-      console.log(coiso);
-    });
+    FavoritesService.addFavorite(cenas.value);
   };
 
 })
@@ -37,18 +32,11 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('ListCtrl', function($scope, FavoritesService, FavoritesLocal) {
+.controller('ListCtrl', function($scope, FavoritesService) {
   FavoritesService.getFavorites($scope.id).then(function(data){
     console.log(data);
     $scope.content = data;
   });
 
   $scope.title = 'Favoritos';
-  /*$scope.content = [];
-  var f = FavoritesLocal.get();
-  for (var i = 0; i < f.length; i++) {
-    VideoService.getVideo(f[i]).then(function(data){
-      $scope.content.push(data);
-    });
-  }*/
 });

@@ -13,7 +13,7 @@ angular.module('app.services', [])
     getList: function() {
       return $http({
         method: 'GET',
-        url: endpoint+'/api/tv/videos'
+        url: endpoint+'/api/tv/schedule'
       }).then(function(response) {
         return response.data;
       });
@@ -48,18 +48,6 @@ angular.module('app.services', [])
       }).then(function(response) {
         return response.data;
       });
-    }
-  };
-})
-
-.factory('FavoritesLocal', function ($http, endpoint) {
-  var a = [];
-  return {
-    add: function(id) {
-      a.push(id);
-    },
-    get: function() {
-      return a;
     }
   };
 })
