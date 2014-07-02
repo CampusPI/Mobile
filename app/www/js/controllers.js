@@ -37,11 +37,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('VideoCtrl', function($scope, $stateParams, VideoService) {
+.controller('VideoCtrl', function($scope, $stateParams, ContentService) {
   $scope.id = $stateParams.videoId;
-  VideoService.getId($scope.id).then(function(data) {
-    $scope.data = data[0];
-    console.log($scope.data);
+  ContentService.get($scope.id).then(function(data) {
+    console.log(data);
+    $scope.data = data;
   });
 })
 

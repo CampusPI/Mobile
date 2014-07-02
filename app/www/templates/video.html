@@ -1,16 +1,16 @@
 <ion-view title="{{data.titulo || data.name}}">
   <ion-content class="has-header">
-    <div class="video" ng-if="data.type === 'video'">
+    <div class="video" ng-if="data.videoId">
       <div youtube></div>
     </div>
 
-    <div ng-if="data.type === 'new'">
+    <div ng-if="data.conteudo">
       <img style="max-width: 100%" src="http://www.fct.unl.pt/sites/default/files/imagens/noticias/noticias.jpg">
       <h4>{{data.titulo}}</h4>
       <p>Notícia completa <a href="{{data.link}}">aqui</a></p>
     </div>
 
-    <div ng-if="data.type === 'biblio'">
+    <div ng-if="!data.conteudo && !data.videoId">
       <img style="max-width: 100%" src="{{data.image}}">
       <h4>{{data.titulo}}</h4>
     </div>

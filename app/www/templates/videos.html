@@ -4,8 +4,8 @@
   </ion-nav-buttons>
   <ion-content class="has-header" noScroll>
 
-      <div ng-if="new" class="list card yellow" ng-click="go('/app/video/{{new._id}}')">
-        <div class="item noborder" swipetowin="{{new._id}}">
+      <div ng-if="new" class="list card yellow" ng-click="go('/app/video/{{new.id}}')">
+        <div class="item noborder" swipetowin="{{new.id}}">
           <div class="item item-text-wrap">
             {{new.name || new.titulo}}
           </div>
@@ -20,8 +20,8 @@
         </div>
       </div>
 
-      <div ng-repeat="playlist in playlists" class="list card" ng-click="go('/app/video/{{playlist._id}}')">
-        <div class="item noborder" swipetowin="{{playlist._id}}">
+      <div ng-repeat="playlist in playlists" class="list card" ng-click="go('/app/video/{{playlist.id}}')">
+        <div class="item noborder" swipetowin="{{playlist.id}}">
           <div class="item item-text-wrap">
             {{playlist.name || playlist.titulo}}
           </div>

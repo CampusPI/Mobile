@@ -8,7 +8,7 @@
     
     <ion-list ng-repeat="c in content">
 
-      <div class="item item-thumbnail-left" ng-click="go('/app/video/{{c.videoId}}')">
+      <div class="item item-thumbnail-left" ng-click="go('/app/video/{{c.id}}')">
         <img src="http://img.youtube.com/vi/{{c.videoId}}/0.jpg">
         <h2>{{c.name}}</h2>
         <p>{{c.description}}</p>

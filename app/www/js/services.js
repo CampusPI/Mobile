@@ -26,6 +26,19 @@ angular.module('app.services', [])
   };
 })
 
+.factory('ContentService', function ($http, endpoint) {
+  return {
+    get: function(id) {
+      return $http({
+        method: 'GET',
+        url: endpoint+'/api/web/content/'+id
+      }).then(function(response) {
+        return response.data;
+      });
+    }
+  };
+})
+
 .factory('UpdateService', function ($http, endpoint) {
   return{
     new: function() {
