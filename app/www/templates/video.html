@@ -1,5 +1,6 @@
 <ion-view title="{{data.titulo || data.name}}">
   <ion-content class="has-header">
+
     <div class="video" ng-if="data.videoId">
       <div youtube></div>
     </div>
@@ -14,6 +15,9 @@
       <img style="max-width: 100%" src="{{data.image}}">
       <h4>{{data.titulo}}</h4>
     </div>
+
+    <p ng-if="isFav" ng-click="rem(data._id)">Remover dos favs</p>
+    <p ng-if="!isFav" ng-click="add(data._id)">Adicionar aos favs</p>
 
   </ion-content>
   <ion-nav-buttons side="right">

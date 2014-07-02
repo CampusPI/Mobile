@@ -75,9 +75,36 @@ angular.module('app.services', [])
         headers: {
           'Authorization': 'Bearer '+'109029607727800353127'
         },
-        data: {videoid: videoid}
+        data: {id: videoid}
       }).then(function(response) {
         return response.data;
+      });
+    },
+    removeFavorite: function(id) {
+      return $http({
+        method: 'DELETE',
+        url: endpoint+'/api/web/favorites',
+        headers: {
+          'Authorization': 'Bearer '+'109029607727800353127'
+        },
+        data: {id: id}
+      }).then(function(response) {
+        return response.data;
+      });
+    },
+    isFav: function(id) {
+      return $http({
+        method: 'GET',
+        url: endpoint+'/api/web/favorites',
+        headers: {
+          'Authorization': 'Bearer '+'109029607727800353127'
+        }
+      }).then(function(response) {
+        console.log(response.data);
+        console.log(id);
+        return response.data.filter(function(element){
+          return element._id === id;
+        });
       });
     }
   };

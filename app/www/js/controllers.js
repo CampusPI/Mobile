@@ -32,22 +32,34 @@ angular.module('starter.controllers', [])
 .controller('VideosCtrl', function($scope, VideoService, FavoritesService) {
 
   $scope.addtoFavs = function(cenas) {
+    console.log(cenas);
     FavoritesService.addFavorite(cenas.value);
   };
 
 })
 
-.controller('VideoCtrl', function($scope, $stateParams, ContentService) {
+.controller('VideoCtrl', function($scope, $stateParams, ContentService, FavoritesService) {
   $scope.id = $stateParams.videoId;
   ContentService.get($scope.id).then(function(data) {
     console.log(data);
     $scope.data = data;
   });
+
+  FavoritesService.isFav($scope.id).then(function(res){
+    if (res.length > 0) {
+      $scope.isFav = true;
+    }
+    else {
+      $scope.isFav = false;
+    }
+  });
+
+  $scope.rem = function(id) { FavoritesService.removeFavorite(id).then(function(res) {}); };
+  $scope.add = function(id) { FavoritesService.addFavorite(id).then(function(res) {}); };
 })
 
 .controller('ListCtrl', function($scope, FavoritesService) {
   FavoritesService.getFavorites($scope.id).then(function(data){
-    console.log(data);
     $scope.content = data;
   });
 
