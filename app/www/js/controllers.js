@@ -15,10 +15,12 @@ angular.module('starter.controllers', [])
     UpdateService.new().then(function(data) {
       if (JSON.stringify($scope.new) !== JSON.stringify(data[0])) {
         $scope.new = data[0];
+        console.log($scope.new);
       }
     });
     VideoService.getList().then(function(data) {
       $scope.playlists = data;
+      console.log(data);
       $scope.imgDef= 'http://www.fct.unl.pt/sites/default/files/imagens/noticias/noticias.jpg';
     });
   };
@@ -60,18 +62,22 @@ angular.module('starter.controllers', [])
     console.log(data);
     $scope.data = data;
   });
+  
+  var isfav = function () {
+    FavoritesService.isFav($scope.id).then(function(res){
+      if (res.length > 0) {
+        $scope.isFav = true;
+      }
+      else {
+        $scope.isFav = false;
+      }
+    });
+  };
 
-  FavoritesService.isFav($scope.id).then(function(res){
-    if (res.length > 0) {
-      $scope.isFav = true;
-    }
-    else {
-      $scope.isFav = false;
-    }
-  });
+  isfav();
 
-  $scope.rem = function(id) { FavoritesService.removeFavorite(id).then(function(res) {}); };
-  $scope.add = function(id) { FavoritesService.addFavorite(id).then(function(res) {}); };
+  $scope.rem = function(id) { FavoritesService.removeFavorite(id).then(function(res) { isfav(); }); };
+  $scope.add = function(id) { FavoritesService.addFavorite(id).then(function(res) { isfav(); }); };
 })
 
 

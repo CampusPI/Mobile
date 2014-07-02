@@ -4,7 +4,9 @@
   </ion-nav-buttons>
   <ion-content class="has-header" noScroll>
 
-    <div ng-if="content.length===0">NO FAVS</div>
+    <div ng-if="content.length===0" class="has-header bar bar-header bar-light">
+      <h3 class="title">Não Tem Favoritos</h3>
+    </div>
     
     <ion-list ng-repeat="c in content">
 
