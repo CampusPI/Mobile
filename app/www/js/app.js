@@ -22,7 +22,7 @@ angular.module(
   });
 })
 
-.constant('endpoint','http://localhost:8080')
+.constant('endpoint','http://server.pt.campinhos.pt')
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
