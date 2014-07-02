@@ -38,6 +38,22 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('NewsCtrl', function($scope, $stateParams, NewsService) {
+
+  NewsService.get().then(function(data) {
+    $scope.data = data;
+  });
+
+})
+
+.controller('EventsCtrl', function($scope, $stateParams, EventsService) {
+
+  EventsService.get().then(function(data) {
+    $scope.data = data;
+  });
+
+})
+
 .controller('VideoCtrl', function($scope, $stateParams, ContentService, FavoritesService) {
   $scope.id = $stateParams.videoId;
   ContentService.get($scope.id).then(function(data) {
@@ -57,6 +73,7 @@ angular.module('starter.controllers', [])
   $scope.rem = function(id) { FavoritesService.removeFavorite(id).then(function(res) {}); };
   $scope.add = function(id) { FavoritesService.addFavorite(id).then(function(res) {}); };
 })
+
 
 .controller('ListCtrl', function($scope, FavoritesService) {
   FavoritesService.getFavorites($scope.id).then(function(data){

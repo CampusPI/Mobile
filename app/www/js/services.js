@@ -26,6 +26,32 @@ angular.module('app.services', [])
   };
 })
 
+.factory('NewsService', function ($http, endpoint) {
+  return {
+    get: function(id) {
+      return $http({
+        method: 'GET',
+        url: endpoint+'/api/web/news'
+      }).then(function(response) {
+        return response;
+      });
+    }
+  };
+})
+
+.factory('EventsService', function ($http, endpoint) {
+  return {
+    get: function(id) {
+      return $http({
+        method: 'GET',
+        url: endpoint+'/api/web/biblio'
+      }).then(function(response) {
+        return response;
+      });
+    }
+  };
+})
+
 .factory('ContentService', function ($http, endpoint) {
   return {
     get: function(id) {

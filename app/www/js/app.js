@@ -74,6 +74,15 @@ angular.module(
       }
     });
 
+    .state('app.news', {
+      url: "/news",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/news.html"
+        }
+      }
+    });
+
     /*.state('app.browse', {
       url: "/browse",
       views: {
