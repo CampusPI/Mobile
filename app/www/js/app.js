@@ -22,7 +22,7 @@ angular.module(
   });
 })
 
-.constant('endpoint','http://server.pt.campinhos.pt')
+.constant('endpoint','http://server.pi.campinhos.pt')
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
