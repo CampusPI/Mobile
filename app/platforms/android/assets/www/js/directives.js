@@ -45,10 +45,20 @@ angular.module('starter.directives', [])
         $element.addClass('animated slideOutRight');
         setTimeout(function(){$element.parent().addClass("animated fadeOutUp");}, 500);
         setTimeout(function(){$element.parent().remove();}, 700);
+        $scope.addtoFavs($element[0].attributes.swipetowin);
       }
       else {
         $element.attr('style', '-webkit-transition:all .2s linear;');
       }
     }
+  };
+})
+
+.directive('youtube', function() {
+  return function (scope, element) {
+    scope.$watch('id', function() {
+      var el = '<iframe id="vidz" src="http://www.youtube.com/embed/'+scope.data.videoId+'?end=100&modestbranding=0&autoplay=1&showinfo=0&enablejsapi=1&version=3&rel=0" frameborder="0"></iframe>';
+      element.html('').append(el);
+    });
   };
 });

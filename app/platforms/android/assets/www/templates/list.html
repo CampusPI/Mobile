@@ -3,12 +3,18 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header" noScroll>
+
+    <div ng-if="content.length===0" class="has-header bar bar-header bar-light">
+      <h3 class="title">Não Tem Favoritos</h3>
+    </div>
+    
     <ion-list ng-repeat="c in content">
 
-      <div class="item item-thumbnail-left" href="#">
-        <img src="http://placehold.it/80x80">
-        <h2>{{c.title}}</h2>
-        <p>Uma descrição fixe</p>
+      <div class="item item-thumbnail-left" ng-click="go('/app/video/{{c._id}}')">
+        <!--<img src="{{http://img.youtube.com/vi/{{c.videoId}}/0.jpg">-->
+        <img src="{{c.thumbnail || c.image || imgDef}}">
+        <h2>{{c.name || c.titulo}}</h2>
+        <p>{{c.description}}</p>
       </div>
 
     </ion-list>
