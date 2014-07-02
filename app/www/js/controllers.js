@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $location, VideoService, VideosLocal) {
+.controller('AppCtrl', function($scope, $location, $interval, VideoService, UpdateService, VideosLocal) {
 
   $scope.width = window.innerWidth;
 
@@ -11,13 +11,25 @@ angular.module('starter.controllers', [])
   };
   $scope.fav = [];
 
+  var apdete = function() {
+    UpdateService.new().then(function(data) {
+      if (JSON.stringify($scope.new) !== JSON.stringify(data[0])) {
+        $scope.new = data[0];
+      }
+    });
+    VideoService.getList().then(function(data) {
+      $scope.playlists = data;
+      $scope.imgDef= 'http://www.fct.unl.pt/sites/default/files/imagens/noticias/noticias.jpg';
+    });
+  };
+
+  apdete();
+
+  $interval(apdete,10000);
+
 })
 
 .controller('VideosCtrl', function($scope, VideoService, FavoritesService) {
-
-  VideoService.getList().then(function(data){
-    $scope.playlists = data;
-  });
 
   $scope.addtoFavs = function(cenas) {
     FavoritesService.addFavorite(cenas.value);

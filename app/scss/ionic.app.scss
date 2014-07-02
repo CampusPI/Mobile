@@ -133,3 +133,7 @@ $headings-color: #646975;
   margin: 1em auto;
   max-width: 300px;
 }
+
+.card.yellow > .item > .item{
+  background-color: lighten($energized,20%);
+}

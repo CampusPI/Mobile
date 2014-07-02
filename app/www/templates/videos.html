@@ -3,6 +3,23 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header" noScroll>
+
+      <div ng-if="new" class="list card yellow" ng-click="go('/app/video/{{new._id}}')">
+        <div class="item noborder" swipetowin="{{new._id}}">
+          <div class="item item-text-wrap">
+            {{new.name}}
+          </div>
+          <div class="item item-image">
+            <img src="{{new.thumbnail}}">
+          </div>
+        </div>
+        <div class="escondeesconde">
+          <div>
+            <i class="icon ion-star"></i>
+          </div>
+        </div>
+      </div>
+
       <div ng-repeat="playlist in playlists" class="list card" ng-click="go('/app/video/{{playlist._id}}')">
         <div class="item noborder" swipetowin="{{playlist._id}}">
           <div class="item item-text-wrap">

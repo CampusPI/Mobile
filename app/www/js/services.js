@@ -13,7 +13,21 @@ angular.module('app.services', [])
     getList: function() {
       return $http({
         method: 'GET',
-        url: endpoint+'/api/tv/schedule'
+        url: endpoint+'/api/tv/lastContent'
+      }).then(function(response) {
+        var a = response.data.reverse().slice(1);
+        return a;
+      });
+    },
+  };
+})
+
+.factory('UpdateService', function ($http, endpoint) {
+  return{
+    new: function() {
+      return $http({
+        method: 'GET',
+        url: endpoint+'/api/tv/currentContent'
       }).then(function(response) {
         return response.data;
       });
