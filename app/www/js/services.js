@@ -1,6 +1,6 @@
 angular.module('app.services', [])
 
-.factory('VideoService', function ($http, endpoint) {
+.factory('MainService', function ($http, endpoint) {
   return {
     getId: function(id) {
       return $http({
@@ -28,11 +28,12 @@ angular.module('app.services', [])
 
 .factory('NewsService', function ($http, endpoint) {
   return {
-    get: function(id) {
+    get: function() {
       return $http({
         method: 'GET',
         url: endpoint+'/api/web/news'
       }).then(function(response) {
+        console.log(response);
         return response;
       });
     }
@@ -41,10 +42,23 @@ angular.module('app.services', [])
 
 .factory('EventsService', function ($http, endpoint) {
   return {
-    get: function(id) {
+    get: function() {
       return $http({
         method: 'GET',
         url: endpoint+'/api/web/biblio'
+      }).then(function(response) {
+        return response;
+      });
+    }
+  };
+})
+
+.factory('VideosService', function ($http, endpoint) {
+  return {
+    get: function() {
+      return $http({
+        method: 'GET',
+        url: endpoint+'/api/web/videos'
       }).then(function(response) {
         return response;
       });

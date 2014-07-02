@@ -1,0 +1,19 @@
+<ion-view title="Eventos">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <h1>Eventos</h1>
+    <ion-list ng-repeat="e in events">
+
+      <div class="item item-thumbnail-left" ng-click="go('/app/content/{{e._id}}')">
+        <img src="{{e.image}}">
+        <h2>{{e.titulo}}</h2>
+      </div>
+
+    </ion-list>
+  </ion-content>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios7-search-strong"></button>
+  </ion-nav-buttons>
+</ion-view>

@@ -1,43 +1,20 @@
-<ion-view title="CampusTV">
+<ion-view title="Vídeos">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header" noScroll>
+  <ion-content class="has-header">
+    <h1>Vídeos</h1>
+    <ion-list ng-repeat="v in videos">
 
-      <div ng-if="new" class="list card yellow" ng-click="go('/app/video/{{new.id}}')">
-        <div class="item noborder" swipetowin="{{new.id}}">
-          <div class="item item-text-wrap">
-            {{new.name || new.titulo}}
-          </div>
-          <div class="item item-image">
-            <img src="{{new.thumbnail || new.image || imgDef}}">
-          </div>
-        </div>
-        <div class="escondeesconde">
-          <div>
-            <i class="icon ion-star"></i>
-          </div>
-        </div>
+      <div class="item item-thumbnail-left" ng-click="go('/app/content/{{v._id}}')">
+        <img src="{{v.thumbnail}}">
+        <h2>{{v.titulo}}</h2>
+        <p>{{v.description}}</p>
       </div>
 
-      <div ng-repeat="playlist in playlists" class="list card" ng-click="go('/app/video/{{playlist.id}}')">
-        <div class="item noborder" swipetowin="{{playlist.id}}">
-          <div class="item item-text-wrap">
-            {{playlist.name || playlist.titulo}}
-          </div>
-          <div class="item item-image">
-            <img src="{{playlist.thumbnail || playlist.image || imgDef}}">
-          </div>
-        </div>
-        <div class="escondeesconde">
-          <div>
-            <i class="icon ion-star"></i>
-          </div>
-        </div>
-      </div>
- </ion-content>
-
+    </ion-list>
+  </ion-content>
   <ion-nav-buttons side="right">
-    <button class="button button-icon icon ion-ios7-search"></button>
+    <button class="button button-icon icon ion-ios7-search-strong"></button>
   </ion-nav-buttons>
 </ion-view>

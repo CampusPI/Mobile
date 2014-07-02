@@ -1,7 +1,7 @@
 <ion-view title="{{data.titulo || data.name}}">
   <ion-content class="has-header">
 
-    <div class="video" ng-if="data.videoId">
+    <div class="video" ng-if="data.videoId">s
       <div youtube></div>
     </div>
 
@@ -12,11 +12,14 @@
     </div>
 
     <div ng-if="!data.conteudo && !data.videoId">
-      <img style="max-width: 100%" src="{{data.image}}">
       <h4>{{data.titulo}}</h4>
+      <img style="max-width: 100%" src="{{data.image}}">
+      <p>Mais informações <a href="{{data.link}}">aqui</a></p>
     </div>
 
     <br>
+
+    <p>{{data.description}}</p>
     
     <button class="button button-balanced button-full button-large" ng-if="!isFav" ng-click="add(data._id)">Adicionar aos favoritos</button>
     <button class="button button-assertive button-full button-large" ng-if="isFav" ng-click="rem(data._id)">Remover dos favoritos</button>

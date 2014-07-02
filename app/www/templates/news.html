@@ -1,9 +1,17 @@
-<ion-view title="Search">
+<ion-view title="Notícias">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>Search</h1>
+    <h1>Notícias</h1>
+    <ion-list ng-repeat="n in news">
+
+      <div class="item" ng-click="go('/app/content/{{n._id}}')">
+        <h2>{{n.titulo}}</h2>
+        <p>{{n.description}}</p>
+      </div>
+
+    </ion-list>
   </ion-content>
   <ion-nav-buttons side="right">
     <button class="button button-icon icon ion-ios7-search-strong"></button>

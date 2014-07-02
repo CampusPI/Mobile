@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $location, $interval, VideoService, UpdateService, VideosLocal) {
+.controller('AppCtrl', function($scope, $location, $interval, MainService, UpdateService, VideosLocal) {
 
   $scope.width = window.innerWidth;
 
@@ -15,12 +15,12 @@ angular.module('starter.controllers', [])
     UpdateService.new().then(function(data) {
       if (JSON.stringify($scope.new) !== JSON.stringify(data[0])) {
         $scope.new = data[0];
-        console.log($scope.new);
+        // console.log($scope.new);
       }
     });
-    VideoService.getList().then(function(data) {
+    MainService.getList().then(function(data) {
       $scope.playlists = data;
-      console.log(data);
+      // console.log(data);
       $scope.imgDef= 'http://www.fct.unl.pt/sites/default/files/imagens/noticias/noticias.jpg';
     });
   };
@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('VideosCtrl', function($scope, VideoService, FavoritesService) {
+.controller('MainCtrl', function($scope, FavoritesService) {
 
   $scope.addtoFavs = function(cenas) {
     console.log(cenas);
@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
 .controller('NewsCtrl', function($scope, $stateParams, NewsService) {
 
   NewsService.get().then(function(data) {
-    $scope.data = data;
+    $scope.news = data.data;
   });
 
 })
@@ -51,13 +51,21 @@ angular.module('starter.controllers', [])
 .controller('EventsCtrl', function($scope, $stateParams, EventsService) {
 
   EventsService.get().then(function(data) {
-    $scope.data = data;
+    $scope.events = data.data;
   });
 
 })
 
-.controller('VideoCtrl', function($scope, $stateParams, ContentService, FavoritesService) {
-  $scope.id = $stateParams.videoId;
+.controller('VideosCtrl', function($scope, $stateParams, VideosService) {
+
+  VideosService.get().then(function(data) {
+    $scope.videos = data.data;
+  });
+
+})
+
+.controller('ContentCtrl', function($scope, $stateParams, ContentService, FavoritesService) {
+  $scope.id = $stateParams.id;
   ContentService.get($scope.id).then(function(data) {
     console.log(data);
     $scope.data = data;
