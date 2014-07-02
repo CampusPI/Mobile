@@ -10,7 +10,8 @@ angular.module(
     'ionic',
     'starter.controllers',
     'starter.directives',
-    'app.services'
+    'app.services',
+    'td.easySocialShare'
   ])
 
 .run(function($ionicPlatform) {

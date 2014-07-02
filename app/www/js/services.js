@@ -29,6 +29,7 @@ angular.module('app.services', [])
 .factory('ContentService', function ($http, endpoint) {
   return {
     get: function(id) {
+      console.log(id);
       return $http({
         method: 'GET',
         url: endpoint+'/api/web/content/'+id
