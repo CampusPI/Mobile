@@ -39,8 +39,9 @@ angular.module('starter.controllers', [])
 
 .controller('VideoCtrl', function($scope, $stateParams, VideoService) {
   $scope.id = $stateParams.videoId;
-  VideoService.getVideo($scope.id).then(function(data){
-    $scope.title = data.name;
+  VideoService.getId($scope.id).then(function(data) {
+    $scope.data = data[0];
+    console.log($scope.data);
   });
 })
 

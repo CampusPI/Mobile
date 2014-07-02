@@ -2,12 +2,16 @@ angular.module('app.services', [])
 
 .factory('VideoService', function ($http, endpoint) {
   return {
-    getVideo: function(id) {
+    getId: function(id) {
       return $http({
         method: 'GET',
-        url: endpoint+'/api/web/video/'+id
+        url: endpoint+'/api/tv/schedule'
       }).then(function(response) {
-        return response.data;
+        console.log(id);
+        return response.data.filter(function(element){
+          console.log(element._id);
+          return element._id === id;
+        });
       });
     },
     getList: function() {

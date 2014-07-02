@@ -7,10 +7,10 @@
       <div ng-if="new" class="list card yellow" ng-click="go('/app/video/{{new._id}}')">
         <div class="item noborder" swipetowin="{{new._id}}">
           <div class="item item-text-wrap">
-            {{new.name}}
+            {{new.name || new.titulo}}
           </div>
           <div class="item item-image">
-            <img src="{{new.thumbnail}}">
+            <img src="{{new.thumbnail || new.image || imgDef}}">
           </div>
         </div>
         <div class="escondeesconde">
@@ -23,10 +23,10 @@
       <div ng-repeat="playlist in playlists" class="list card" ng-click="go('/app/video/{{playlist._id}}')">
         <div class="item noborder" swipetowin="{{playlist._id}}">
           <div class="item item-text-wrap">
-            {{playlist.name}}
+            {{playlist.name || playlist.titulo}}
           </div>
           <div class="item item-image">
-            <img src="{{playlist.thumbnail}}">
+            <img src="{{playlist.thumbnail || playlist.image || imgDef}}">
           </div>
         </div>
         <div class="escondeesconde">
