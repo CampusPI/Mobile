@@ -4688,7 +4688,7 @@ progress {
  * Buttons
  * --------------------------------------------------
  */
-.button {
+.button, .share > a {
   border-color: #b2b2b2;
   background-color: #dbdbdb;
   color: #646975;
@@ -4707,279 +4707,279 @@ progress {
   font-size: 16px;
   line-height: 42px;
   cursor: pointer; }
-  .button:hover {
+  .button:hover, .share > a:hover {
     color: #646975;
     text-decoration: none; }
-  .button.active, .button.activated {
+  .button.active, .button.activated, .share > a.active, .share > a.activated {
     border-color: #a2a2a2;
     background-color: #e5e5e5;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-  .button:after {
+  .button:after, .share > a:after {
     position: absolute;
     top: -6px;
     right: -8px;
     bottom: -6px;
     left: -8px;
     content: ' '; }
-  .button .icon {
+  .button .icon, .share > a .icon {
     vertical-align: top; }
-  .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
+  .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before, .share > a .icon:before, .share > a.icon:before, .share > a.icon-left:before, .share > a.icon-right:before {
     display: inline-block;
     padding: 0 0 1px 0;
     vertical-align: inherit;
     font-size: 24px;
     line-height: 42px; }
-  .button.icon-left:before {
+  .button.icon-left:before, .share > a.icon-left:before {
     float: left;
     padding-right: 0.2em;
     padding-left: 0; }
-  .button.icon-right:before {
+  .button.icon-right:before, .share > a.icon-right:before {
     float: right;
     padding-right: 0;
     padding-left: 0.2em; }
-  .button.button-block, .button.button-full {
+  .button.button-block, .button.button-full, .share > a.button-block, .share > a.button-full {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .button.button-light {
+  .button.button-light, .share > a.button-light {
     border-color: #dadada;
     background-color: #fff;
     color: #646975; }
-    .button.button-light:hover {
+    .button.button-light:hover, .share > a.button-light:hover {
       color: #646975;
       text-decoration: none; }
-    .button.button-light.active, .button.button-light.activated {
+    .button.button-light.active, .button.button-light.activated, .share > a.button-light.active, .share > a.button-light.activated {
       border-color: #ccc;
       background-color: #fafafa;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-light.button-clear {
+    .button.button-light.button-clear, .share > a.button-light.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #dadada; }
-    .button.button-light.button-icon {
+    .button.button-light.button-icon, .share > a.button-light.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-light.button-outline {
+    .button.button-light.button-outline, .share > a.button-light.button-outline {
       border-color: #dadada;
       background: transparent;
       color: #dadada; }
-      .button.button-light.button-outline.active, .button.button-light.button-outline.activated {
+      .button.button-light.button-outline.active, .button.button-light.button-outline.activated, .share > a.button-light.button-outline.active, .share > a.button-light.button-outline.activated {
         background-color: #dadada;
         box-shadow: none;
         color: #fff; }
-  .button.button-stable {
+  .button.button-stable, .share > a.button-stable {
     border-color: #b2b2b2;
     background-color: #dbdbdb;
     color: #646975; }
-    .button.button-stable:hover {
+    .button.button-stable:hover, .share > a.button-stable:hover {
       color: #646975;
       text-decoration: none; }
-    .button.button-stable.active, .button.button-stable.activated {
+    .button.button-stable.active, .button.button-stable.activated, .share > a.button-stable.active, .share > a.button-stable.activated {
       border-color: #a2a2a2;
       background-color: #e5e5e5;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-stable.button-clear {
+    .button.button-stable.button-clear, .share > a.button-stable.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #b2b2b2; }
-    .button.button-stable.button-icon {
+    .button.button-stable.button-icon, .share > a.button-stable.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-stable.button-outline {
+    .button.button-stable.button-outline, .share > a.button-stable.button-outline {
       border-color: #b2b2b2;
       background: transparent;
       color: #b2b2b2; }
-      .button.button-stable.button-outline.active, .button.button-stable.button-outline.activated {
+      .button.button-stable.button-outline.active, .button.button-stable.button-outline.activated, .share > a.button-stable.button-outline.active, .share > a.button-stable.button-outline.activated {
         background-color: #b2b2b2;
         box-shadow: none;
         color: #fff; }
-  .button.button-positive {
+  .button.button-positive, .share > a.button-positive {
     border-color: #244775;
     background-color: #366AB0;
     color: #fff; }
-    .button.button-positive:hover {
+    .button.button-positive:hover, .share > a.button-positive:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-positive.active, .button.button-positive.activated {
+    .button.button-positive.active, .button.button-positive.activated, .share > a.button-positive.active, .share > a.button-positive.activated {
       border-color: #244775;
       background-color: #244775;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-positive.button-clear {
+    .button.button-positive.button-clear, .share > a.button-positive.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #366AB0; }
-    .button.button-positive.button-icon {
+    .button.button-positive.button-icon, .share > a.button-positive.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-positive.button-outline {
+    .button.button-positive.button-outline, .share > a.button-positive.button-outline {
       border-color: #366AB0;
       background: transparent;
       color: #366AB0; }
-      .button.button-positive.button-outline.active, .button.button-positive.button-outline.activated {
+      .button.button-positive.button-outline.active, .button.button-positive.button-outline.activated, .share > a.button-positive.button-outline.active, .share > a.button-positive.button-outline.activated {
         background-color: #366AB0;
         box-shadow: none;
         color: #fff; }
-  .button.button-calm {
+  .button.button-calm, .share > a.button-calm {
     border-color: #366db0;
     background-color: #6392CF;
     color: #fff; }
-    .button.button-calm:hover {
+    .button.button-calm:hover, .share > a.button-calm:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-calm.active, .button.button-calm.activated {
+    .button.button-calm.active, .button.button-calm.activated, .share > a.button-calm.active, .share > a.button-calm.activated {
       border-color: #366db0;
       background-color: #366db0;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-calm.button-clear {
+    .button.button-calm.button-clear, .share > a.button-calm.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #6392CF; }
-    .button.button-calm.button-icon {
+    .button.button-calm.button-icon, .share > a.button-calm.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-calm.button-outline {
+    .button.button-calm.button-outline, .share > a.button-calm.button-outline {
       border-color: #6392CF;
       background: transparent;
       color: #6392CF; }
-      .button.button-calm.button-outline.active, .button.button-calm.button-outline.activated {
+      .button.button-calm.button-outline.active, .button.button-calm.button-outline.activated, .share > a.button-calm.button-outline.active, .share > a.button-calm.button-outline.activated {
         background-color: #6392CF;
         box-shadow: none;
         color: #fff; }
-  .button.button-assertive {
+  .button.button-assertive, .share > a.button-assertive {
     border-color: #d31e1e;
     background-color: #e75656;
     color: #fff; }
-    .button.button-assertive:hover {
+    .button.button-assertive:hover, .share > a.button-assertive:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-assertive.active, .button.button-assertive.activated {
+    .button.button-assertive.active, .button.button-assertive.activated, .share > a.button-assertive.active, .share > a.button-assertive.activated {
       border-color: #d31e1e;
       background-color: #d31e1e;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-assertive.button-clear {
+    .button.button-assertive.button-clear, .share > a.button-assertive.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #e75656; }
-    .button.button-assertive.button-icon {
+    .button.button-assertive.button-icon, .share > a.button-assertive.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-assertive.button-outline {
+    .button.button-assertive.button-outline, .share > a.button-assertive.button-outline {
       border-color: #e75656;
       background: transparent;
       color: #e75656; }
-      .button.button-assertive.button-outline.active, .button.button-assertive.button-outline.activated {
+      .button.button-assertive.button-outline.active, .button.button-assertive.button-outline.activated, .share > a.button-assertive.button-outline.active, .share > a.button-assertive.button-outline.activated {
         background-color: #e75656;
         box-shadow: none;
         color: #fff; }
-  .button.button-balanced {
+  .button.button-balanced, .share > a.button-balanced {
     border-color: #29793b;
     background-color: #3CB258;
     color: #fff; }
-    .button.button-balanced:hover {
+    .button.button-balanced:hover, .share > a.button-balanced:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-balanced.active, .button.button-balanced.activated {
+    .button.button-balanced.active, .button.button-balanced.activated, .share > a.button-balanced.active, .share > a.button-balanced.activated {
       border-color: #29793b;
       background-color: #29793b;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-balanced.button-clear {
+    .button.button-balanced.button-clear, .share > a.button-balanced.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #3CB258; }
-    .button.button-balanced.button-icon {
+    .button.button-balanced.button-icon, .share > a.button-balanced.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-balanced.button-outline {
+    .button.button-balanced.button-outline, .share > a.button-balanced.button-outline {
       border-color: #3CB258;
       background: transparent;
       color: #3CB258; }
-      .button.button-balanced.button-outline.active, .button.button-balanced.button-outline.activated {
+      .button.button-balanced.button-outline.active, .button.button-balanced.button-outline.activated, .share > a.button-balanced.button-outline.active, .share > a.button-balanced.button-outline.activated {
         background-color: #3CB258;
         box-shadow: none;
         color: #fff; }
-  .button.button-energized {
+  .button.button-energized, .share > a.button-energized {
     border-color: #f98d11;
     background-color: #fbb25c;
     color: #fff; }
-    .button.button-energized:hover {
+    .button.button-energized:hover, .share > a.button-energized:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-energized.active, .button.button-energized.activated {
+    .button.button-energized.active, .button.button-energized.activated, .share > a.button-energized.active, .share > a.button-energized.activated {
       border-color: #f98d11;
       background-color: #f98d11;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-energized.button-clear {
+    .button.button-energized.button-clear, .share > a.button-energized.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #fbb25c; }
-    .button.button-energized.button-icon {
+    .button.button-energized.button-icon, .share > a.button-energized.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-energized.button-outline {
+    .button.button-energized.button-outline, .share > a.button-energized.button-outline {
       border-color: #fbb25c;
       background: transparent;
       color: #fbb25c; }
-      .button.button-energized.button-outline.active, .button.button-energized.button-outline.activated {
+      .button.button-energized.button-outline.active, .button.button-energized.button-outline.activated, .share > a.button-energized.button-outline.active, .share > a.button-energized.button-outline.activated {
         background-color: #fbb25c;
         box-shadow: none;
         color: #fff; }
-  .button.button-royal {
+  .button.button-royal, .share > a.button-royal {
     border-color: #3014e4;
     background-color: #6c55f0;
     color: #fff; }
-    .button.button-royal:hover {
+    .button.button-royal:hover, .share > a.button-royal:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-royal.active, .button.button-royal.activated {
+    .button.button-royal.active, .button.button-royal.activated, .share > a.button-royal.active, .share > a.button-royal.activated {
       border-color: #3014e4;
       background-color: #3014e4;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-royal.button-clear {
+    .button.button-royal.button-clear, .share > a.button-royal.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #6c55f0; }
-    .button.button-royal.button-icon {
+    .button.button-royal.button-icon, .share > a.button-royal.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-royal.button-outline {
+    .button.button-royal.button-outline, .share > a.button-royal.button-outline {
       border-color: #6c55f0;
       background: transparent;
       color: #6c55f0; }
-      .button.button-royal.button-outline.active, .button.button-royal.button-outline.activated {
+      .button.button-royal.button-outline.active, .button.button-royal.button-outline.activated, .share > a.button-royal.button-outline.active, .share > a.button-royal.button-outline.activated {
         background-color: #6c55f0;
         box-shadow: none;
         color: #fff; }
-  .button.button-dark {
+  .button.button-dark, .share > a.button-dark {
     border-color: #111;
     background-color: #646975;
     color: #fff; }
-    .button.button-dark:hover {
+    .button.button-dark:hover, .share > a.button-dark:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-dark.active, .button.button-dark.activated {
+    .button.button-dark.active, .button.button-dark.activated, .share > a.button-dark.active, .share > a.button-dark.activated {
       border-color: #000;
       background-color: #262626;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-dark.button-clear {
+    .button.button-dark.button-clear, .share > a.button-dark.button-clear {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #646975; }
-    .button.button-dark.button-icon {
+    .button.button-dark.button-icon, .share > a.button-dark.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-dark.button-outline {
+    .button.button-dark.button-outline, .share > a.button-dark.button-outline {
       border-color: #646975;
       background: transparent;
       color: #646975; }
-      .button.button-dark.button-outline.active, .button.button-dark.button-outline.activated {
+      .button.button-dark.button-outline.active, .button.button-dark.button-outline.activated, .share > a.button-dark.button-outline.active, .share > a.button-dark.button-outline.activated {
         background-color: #646975;
         box-shadow: none;
         color: #fff; }
@@ -6485,3 +6485,14 @@ a.button {
 
 .card.yellow > .item > .item {
   background-color: #fde1c0; }
+
+.share {
+  text-align: center; }
+
+.share > a {
+  text-decoration: none;
+  margin: 0.5em;
+  font-size: 1.5em; }
+
+.pointer {
+  cursor: pointer; }
