@@ -4,7 +4,7 @@
  * --------------------------------------------------
  */
 
-.button {
+.button, .share > a {
   // set the color defaults
   @include button-style($button-default-bg, $button-default-border, $button-default-active-bg, $button-default-active-border, $button-default-text);
 

@@ -137,3 +137,17 @@ $headings-color: #646975;
 .card.yellow > .item > .item{
   background-color: lighten($energized,20%);
 }
+
+.share {
+  text-align: center;
+}
+
+.share > a {
+  text-decoration: none;
+  margin: 0.5em;
+  font-size: 1.5em;
+}
+
+.pointer {
+  cursor: pointer;
+}
