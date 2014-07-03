@@ -1,15 +1,14 @@
-<ion-view title="Vídeos">
+<ion-view title="Notícias">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>Vídeos</h1>
-    <ion-list ng-repeat="v in videos">
+    <h1>Notícias</h1>
+    <ion-list ng-repeat="n in news">
 
-      <div class="item item-thumbnail-left" ng-click="go('/app/content/{{v._id}}')">
-        <img src="{{v.thumbnail}}">
-        <h2>{{v.titulo}}</h2>
-        <p>{{v.description}}</p>
+      <div class="item" ng-click="go('/app/content/{{n._id}}')">
+        <h2>{{n.titulo}}</h2>
+        <p>{{n.description}}</p>
       </div>
 
     </ion-list>
