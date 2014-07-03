@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $location, $interval, MainService, UpdateService, VideosLocal) {
+.controller('AppCtrl', function($scope, $location, $interval, MainService, UpdateService, VideosLocal, $timeout) {
 
   $scope.width = window.innerWidth;
 
@@ -28,6 +28,12 @@ angular.module('starter.controllers', [])
   apdete();
 
   $interval(apdete,10000);
+
+  $scope.cext = function(url) {
+    console.log(url);
+    window.open(encodeURI(url), '_system', 'location=yes');
+    return false;
+  };
 
 })
 

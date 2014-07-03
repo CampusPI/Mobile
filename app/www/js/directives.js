@@ -61,4 +61,18 @@ angular.module('starter.directives', [])
       element.html('').append(el);
     });
   };
+})
+
+.directive('lf', function() {
+  return function (scope, element, attrs) {
+    console.log(element);
+    var a = element.children();
+    for (var i = 0; i < a.length; i++) {
+      angular.element(a[i]).bind('click', function(a) {
+        var url =this.attributes.bref.value;
+        url = 'http://facebook.com/sharer.php?u=' + scope.data.link;
+        window.open(url, '_system', 'location=yes');
+      });
+    }
+  };
 });

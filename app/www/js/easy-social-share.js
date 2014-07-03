@@ -38,7 +38,8 @@ angular.module('td.easySocialShare', [])
         });
  
         for (i = 0; i < shareLinks.length; i++) {
-          elem.append('<a href="'+ shareLinks[i].url +'" class="fa fa-'+shareLinks[i].network + square + '" target="_blank"></a> ');
+          elem.append('<a lf bref="'+ shareLinks[i].url +'" class="fa fa-'+shareLinks[i].network + square + '" lf></a>');
+          //elem.append('<a \''+shareLinks[i].url+'\')" class="fa fa-'+shareLinks[i].network + square + '"></a> ');
         }
 
       }
