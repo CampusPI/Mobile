@@ -10,7 +10,8 @@ angular.module(
     'ionic',
     'starter.controllers',
     'starter.directives',
-    'app.services'
+    'app.services',
+    'td.easySocialShare'
   ])
 
 .run(function($ionicPlatform) {
@@ -34,6 +35,16 @@ angular.module(
       controller: 'AppCtrl'
     })
 
+    .state('app.main', {
+      url: "/main",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/main.html",
+          controller: 'MainCtrl'
+        }
+      }
+    })
+
     .state('app.videos', {
       url: "/videos",
       views: {
@@ -44,12 +55,32 @@ angular.module(
       }
     })
 
-    .state('app.video', {
-      url: "/video/:videoId",
+    .state('app.news', {
+      url: "/news",
       views: {
         'menuContent' :{
-          templateUrl: "templates/video.html",
-          controller: 'VideoCtrl'
+          templateUrl: "templates/news.html",
+          controller: 'NewsCtrl'
+        }
+      }
+    })
+
+    .state('app.events', {
+      url: "/events",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/events.html",
+          controller: 'EventsCtrl'
+        }
+      }
+    })
+
+    .state('app.content', {
+      url: "/content/:id",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/content.html",
+          controller: 'ContentCtrl'
         }
       }
     })
@@ -103,6 +134,6 @@ angular.module(
     });*/
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/videos');
+  $urlRouterProvider.otherwise('/app/main');
 });
 
